@@ -3,6 +3,7 @@ from constants import *;
 from player import Player;
 from asteroid import Asteroid;
 from asteroidfield import AsteroidField;
+from shot import Shot;
 
 def main():
     pygame.init()
@@ -13,10 +14,12 @@ def main():
     Updatable = pygame.sprite.Group()
     Drawable = pygame.sprite.Group()
     Asteroids = pygame.sprite.Group()
+    Shots = pygame.sprite.Group()
     
     Player.containers = (Updatable, Drawable); # A class variable which adds the Player Class to the specified Containers/Groups.
     Asteroid.containers = (Asteroids, Updatable, Drawable); # Adds Asteroid Class to the specified Containers/Groups.
-    AsteroidField.containers = (Updatable);
+    AsteroidField.containers = (Updatable); 
+    Shot.containers = (Updatable, Drawable); 
     
     Field = AsteroidField();
     PLAYER_1 = Player(SCREEN_WIDTH/2 + 50, SCREEN_HEIGHT/2);

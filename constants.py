@@ -9,3 +9,5 @@ ASTEROID_MAX_RADIUS = ASTEROID_MIN_RADIUS * ASTEROID_KINDS
 PLAYER_RADIUS = 20 # How large the player hitbox is.
 PLAYER_TURN_SPEED = 300 # How fast the player turns.
 PLAYER_SPEED = 200 # How fast the player travels.
+SHOT_RADIUS = 5
+PLAYER_SHOOT_SPEED = 500
