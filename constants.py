@@ -11,3 +11,4 @@ PLAYER_TURN_SPEED = 300 # How fast the player turns.
 PLAYER_SPEED = 200 # How fast the player travels.
 SHOT_RADIUS = 5
 PLAYER_SHOOT_SPEED = 500
+PLAYER_SHOOT_COOLDOWN = 0.3

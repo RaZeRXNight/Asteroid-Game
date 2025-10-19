@@ -19,7 +19,7 @@ def main():
     Player.containers = (Updatable, Drawable); # A class variable which adds the Player Class to the specified Containers/Groups.
     Asteroid.containers = (Asteroids, Updatable, Drawable); # Adds Asteroid Class to the specified Containers/Groups.
     AsteroidField.containers = (Updatable); 
-    Shot.containers = (Updatable, Drawable); 
+    Shot.containers = (Updatable, Drawable, Shots); 
     
     Field = AsteroidField();
     PLAYER_1 = Player(SCREEN_WIDTH/2 + 50, SCREEN_HEIGHT/2);
@@ -41,9 +41,16 @@ def main():
         for i in Updatable:
             i.update(dt)
         
+        # Loop for Asteroid destruction
+        for i in Asteroids:
+            for j in Shots:
+                if i.Collision_Check(j):
+                    i.split(); j.kill()
+        
         # Loops through every drawable entity and draws them
         for i in Drawable:
             i.draw(SCREEN)
+            
             if i.Collision_Check(PLAYER_1) == True:
                 print("Game Over!")
                 pygame.quit()
